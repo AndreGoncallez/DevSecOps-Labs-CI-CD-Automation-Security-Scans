@@ -1,31 +1,116 @@
 # 🚀 Imersão DevOps - Alura + Google Cloud
 
-API desenvolvida com **FastAPI** para gerenciar **alunos**, **cursos** e **matrículas** em uma instituição de ensino, como parte da *Imersão DevOps* promovida pela [Alura](https://www.alura.com.br/) em parceria com o **Google Cloud**.
-
-![FastAPI + DevOps](https://img.shields.io/badge/FastAPI-%2300C7B7.svg?style=for-the-badge&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-%232496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Google Cloud](https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
-![Python](https://img.shields.io/badge/Python%203.10+-blue.svg?style=for-the-badge&logo=python&logoColor=white)
+> _API desenvolvida com **FastAPI** para gerenciar alunos, cursos e matrículas em uma instituição de ensino._
 
 ---
 
-## 📦 Pré-requisitos
+## ⚙️ Pré-requisitos
 
-Antes de começar, instale os seguintes recursos em seu ambiente:
+Antes de iniciar, verifique se os seguintes componentes estão instalados:
 
-- [🐍 Python 3.10 ou superior](https://www.python.org/downloads/)
-- [🐙 Git](https://git-scm.com/downloads)
-- [🐳 Docker](https://www.docker.com/get-started/)
+- 🐍 [Python 3.10+](https://www.python.org/downloads/)
+- 🔧 [Git](https://git-scm.com/downloads)
+- 🐳 [Docker](https://www.docker.com/get-started)
 
 ---
 
-## ▶️ Como rodar o projeto
+## 🧱 Como Subir o Projeto Localmente
 
-### 1️⃣ Clone ou baixe o repositório
-🔽 [Download ZIP](https://github.com/guilhermeonrails/imersao-devops/archive/refs/heads/main.zip)
+### 📥 1. Baixe o Repositório
 
-Ou use o terminal:
+[⬇️ Clique aqui para baixar o projeto ZIP](https://github.com/guilhermeonrails/imersao-devops/archive/refs/heads/main.zip)
+
+---
+
+### 🛠 2. Crie um Ambiente Virtual
 
 ```bash
-git clone https://github.com/guilhermeonrails/imersao-devops.git
-cd imersao-devops
+python3 -m venv ./venv
+```
+
+---
+
+### ⚡ 3. Ative o Ambiente Virtual
+
+- **Linux/Mac:**
+  ```bash
+  source venv/bin/activate
+  ```
+
+- **Windows:**
+  > Execute o terminal como administrador:
+  ```bash
+  Set-ExecutionPolicy RemoteSigned
+  venv\Scripts\activate
+  ```
+
+---
+
+### 📦 4. Instale as Dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### ▶️ 5. Execute a Aplicação
+
+```bash
+uvicorn app:app --reload
+```
+
+---
+
+### 🌐 6. Acesse a Documentação Interativa
+
+Abra no navegador:  
+👉 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+Você poderá testar todos os endpoints da API diretamente pelo Swagger UI.
+
+---
+
+## ☁️ Autenticação com Google Cloud
+
+Para realizar o deploy com Google Cloud Run:
+
+```bash
+gcloud auth login
+gcloud config set project PROJECT_ID
+gcloud run deploy --port=8000
+```
+
+---
+
+## 🧬 Estrutura do Projeto
+
+📁 Organização dos arquivos:
+
+- `app.py` → Aplicação principal FastAPI  
+- `models.py` → Modelos ORM (SQLAlchemy)  
+- `schemas.py` → Schemas de validação (Pydantic)  
+- `database.py` → Configuração SQLite  
+- `routers/` → Rotas separadas (alunos, cursos, matrículas)  
+- `requirements.txt` → Dependências
+
+📝 O banco de dados será criado automaticamente como `escola.db`.
+
+> ⚠️ **Atenção:** Ao excluir o arquivo `escola.db`, todos os dados serão perdidos.
+
+---
+
+## 🎥 Sugestão de GIFs para ilustrar seções
+
+Você pode substituir os emojis por GIFs temáticos (para um estilo mais sci-fi ou tech). Exemplos:
+
+- **Deploy / Cloud**  
+
+
+- **Instalação / Setup**  
+  
+
+- **API Testing**  
+ 
+
+---
